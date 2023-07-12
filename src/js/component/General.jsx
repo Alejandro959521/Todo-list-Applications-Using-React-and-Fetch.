@@ -9,13 +9,16 @@ function General() {
     const [array, setArray] = useState([])
 
     const agregarValor = () => {
-
-        setArray((prev) => {
-            return [...prev, valor]
-        })
-        setValor("");
+        if (valor.trim() != "") {
+            setArray((prev) => {
+                return [...prev, valor]
+            })
+            setValor("");
+        } else {
+            setValor("");
+            alert("campos vacío! introducir un valor porfavor")
+        }
     }
-
     const enterTecla = (event) => {
 
         if (event.key == "Enter") {
@@ -36,16 +39,13 @@ function General() {
 
                     />
 
-                    if (!array.length) {
-                        <div className="text-white"> agregar </div>
-
-                    } else {
-                        <Listado array={array}
-                            setArray={setArray}
-                        />}
+                    <Listado array={array}
+                        setArray={setArray}
+                    />
+                    <Footer array={array} />
                 </div >
 
-                <Footer array={array} />
+
 
             </div>
 

@@ -9,4 +9,10 @@
     
     import 'relative/path/to/stylesheet.scss';
 
-*/
+*/.listado > button{
+    opacity:0.3;
+}
+.listado:hover > button {
+
+    opacity:1;
+}
