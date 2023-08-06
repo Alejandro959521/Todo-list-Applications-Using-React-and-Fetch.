@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-function Listado({ array, setArray }) {
+function Listado({ array, filtradoLista }) {
 
     return (
         <div className=" " >
@@ -11,14 +11,20 @@ function Listado({ array, setArray }) {
 
                 {array.length > 0 ? (
                     array.map((item, index) => {
-
+                        //console.log("esto es item", item)
                         return (
                             <div className="text-white bg-info rounded-pill" key={index}>
-                                <li className="listado d-flex justify-content-between list-group-item mx-3">{item}<button className=" bg-info rounded-circle" onClick={() => setArray(
+                                <li className="listado d-flex justify-content-between list-group-item mx-3">{item.label}
+                                    <button
+                                        className=" bg-info rounded-circle"
+                                        onClick={() => {
 
-                                    array.filter((i, newindex) => index != newindex)
+                                            let listaFiltrada = array.filter((i, newindex) => index != newindex);
+                                            filtradoLista(listaFiltrada)
+                                            // console.log("lista filtrada", listaFiltrada)
+                                        }
 
-                                )}> ❌ </button></li>
+                                        }> ❌ </button></li>
 
                             </div>
 
