@@ -124,7 +124,7 @@ function General() {
             }
             const respond = await fetch(url + "user/miguel_21", options);
             //console.log(respond)
-            if (respond.ok) {
+               if (respond.ok) {
                 usuarionuevo()
             }
         }
